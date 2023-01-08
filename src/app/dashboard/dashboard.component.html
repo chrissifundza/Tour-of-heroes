@@ -1,0 +1,22 @@
+<app-hero-search></app-hero-search>
+
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a *ngFor="let hero of heroes"
+      routerLink="/detail/{{hero.id}}">
+      {{hero.name}}
+      <img src="{{hero.img}}" alt="">
+  </a>
+
+ 
+ 
+</div>
+<div class="cont">
+  <div class="mygif">
+    <img src="assets/img/capt sh.gif" alt="">
+  </div>
+</div>
+<div class="all">
+  <a href="/heroes">View All</a>
+</div>
+

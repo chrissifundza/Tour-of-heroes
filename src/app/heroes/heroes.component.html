@@ -1,0 +1,33 @@
+
+
+
+<h2>My Heroes</h2>
+<p>Click any Hero below to open or <a (click)="goDown2()">Click here to ADD A Hero</a></p>
+<div class="row">
+  <div class="allColumns" *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <img src="{{hero.img}}" alt="">
+    </a>
+    <span class="badge">{{hero.id}}</span>
+    <button type="button"  (click)="delete(hero)" class="delete" title="delete hero"
+      >x</button>
+<a routerLink="/detail/{{hero.id}}"><h3 class="hero-name"> <span>{{hero.name}}</span> </h3></a>
+      
+  </div>
+
+</div>
+
+<div id="add">
+
+  <select name="" #heroIMG id="">
+   <option value="">Select Photo here</option>
+   <option value="{{hero.img}}" *ngFor="let hero of department">{{hero.name}}</option>
+  </select>
+   <p>Write name that match the photo you selected ontop</p>
+   <input id="new-hero" #heroName  placeholder="Superhero you selected ontop" />
+ 
+   <!-- (click) passes input value to add() and then clears the input -->
+   <button type="button" class="add-button" (click)="add(heroName.value, heroIMG.value, 'Abilities beyond those of ordinary people, and fits the role of the hero, typically using his or her powers to help the world become a better place, or dedicating themselves to protecting the public and fighting crime.');heroIMG.value=''; heroName.value=''">
+     Add Hero
+   </button>
+ </div>
